@@ -7,13 +7,14 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzureCLI@2
+  displayName: 'Upload Prod'
+  inputs:
+    azureSubscription: "シグマコンサルティング(eee9046c-f7c0-4e03-98e0-3660ae9224fc)"
+    scriptType: "ps"
+    scriptLocation: "inlineScript"
+    inlineScript: 'az storage blob upload-batch -d $(container) -s $(Build.SourcesDirectory) --account-name $(storagename) --account-key $(accountkey)'
+    
