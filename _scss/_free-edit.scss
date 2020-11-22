@@ -1,0 +1,266 @@
+@charset "utf-8";
+
+.freeEdit {
+  
+  // 見出し
+  h1 {
+    // 本体を継承
+  }
+  h2 {
+    // 本体を継承
+  }
+  h3 {
+    // 本体を継承
+  }
+  h4 {
+    color:$baseStringColor;
+    @include font-NewRodinB;
+    @include fz(18);
+    font-weight:bold;
+    margin:0 0 10px;
+    @include mq(500) {
+      @include fz(13);
+    }
+  }
+    
+  // 本文要素
+  p {
+    margin-bottom:20px;
+  }
+  b {
+    // 本体を継承
+  }
+  em {
+    // 本体を継承
+  }
+  strong {
+    // 本体を継承
+  }
+  a {
+    text-decoration:underline;
+  }
+  .columnizedBlock {
+    .column {
+      a {
+        text-decoration:none;
+        .columnTitle {
+          &.colored {
+            text-decoration:none;
+          }
+        }
+      }
+    }
+  }
+  
+  // ブロック要素寄せ
+  .leftAlign {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .centerAlign {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .rightAlign {
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  // 段組み
+  .two-column {
+    display:table;
+    table-layout:fixed;
+    margin:0 -20px 20px;
+    border-collapse:separate;
+    border-spacing:20px 0;
+    .column {
+      display:table-cell;
+      width:50%;
+    }
+    @include mq(1020) {
+      margin:0 0 20px;
+    }
+    @include mq(500) {
+      display:block;
+      margin:20px 0;
+      .column {
+        display:block;
+        width:100%;
+        margin:20px 0;
+      }
+    }
+  }
+  
+  .three-column {
+    display:table;
+    margin:0 -20px 20px;
+    table-layout:fixed;
+    border-collapse:separate;
+    border-spacing:20px 0;
+    .column {
+      display:table-cell;
+      width:33%;
+    }
+    @include mq(1020) {
+      margin:0 0 20px;
+    }
+    @include mq(500) {
+      display:block;
+      margin:20px 0;
+      .column {
+        display:block;
+        width:100%;
+        margin:20px 0;
+      }
+    }
+  }
+  
+  // 回り込み
+  .asRow {
+    overflow:hidden;
+    margin:0 0 20px;
+    &.asIsOnSp {
+      .floatLeft,
+      .floatRight {
+        max-width:30%;
+      }
+      @include mq(500) {
+        .floatLeft,
+        .floatRight {
+          max-width:none;
+          width:45%;
+          &>iframe,
+          &>a>img,
+          &>img,
+          &>figure {
+            margin:0;
+          }
+        }
+        .floatLeft {
+          float:left;
+          margin:0 20px 20px 0;
+        }
+        .floatRight {
+          float:right;
+          margin:0 0 20px 20px;
+        }
+      }
+    }
+  }
+  .floatLeft {
+    float:left;
+    margin-right:30px;
+    //padding:10px 0 0;
+    &>iframe,
+    &>a>img,
+    &>img,
+    &>figure {
+      width:100%;
+    }
+    @include mq(500) {
+      float:none;
+      margin:20px auto;
+      padding:0;
+      &>iframe,
+      &>a>img,
+      &>img,
+      &>figure {
+        display:block;
+      }
+    }
+  }
+  .floatRight {
+    float:right;
+    margin-left:30px;
+    //padding:10px 0 0;
+    &>iframe,
+    &>a>img,
+    &>img,
+    &>figure {
+      width:100%;
+    }
+    @include mq(500) {
+      float:none;
+      margin:20px auto;
+      padding:0;
+      &>iframe,
+      &>a>img,
+      &>img,
+      &>figure {
+        display:block;
+      }
+    }
+  }
+  .wrapAround {
+    overflow:hidden;
+  }
+  
+  // 表組
+  table {
+    width:100%;
+    table-layout:fixed;
+    margin:40px 0;
+    border-collapse:separate;
+    border-spacing:2px;
+    th,
+    td {
+      padding:10px;
+      vertical-align:top;
+    }
+    th {
+      background-color:#f3f3f3;
+      @include font-NewRodinB;
+    }
+    td {
+      background-color:#fafafa;
+    }
+    &.verticalTable {
+      th {
+        text-align:center;
+      }
+    }
+    @include mq(480) {
+      &.horizontalTable {
+        tr {
+          display:block;
+          margin-bottom:10px;
+        }
+        th {
+          display:block;
+          text-align:center;
+        }
+        td {
+          display:block;
+          border-top:1px solid #f3f3f3;
+        }
+      }
+      &.verticalTable {
+        th {
+          display:none;
+        }
+        td {
+          display:block;
+          margin-bottom:10px;
+          &:before {
+            display:block;
+            content:attr(data-title);
+            margin:-10px -10px 10px;
+            padding:10px;
+            background-color:#f3f3f3;
+            text-align:center;
+            @include font-NewRodinB;
+          }
+        }
+      }
+    }
+  }
+  
+  // カード
+  .card {
+    margin:40px 0;
+  }
+
+}
+

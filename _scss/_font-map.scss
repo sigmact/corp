@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+// 基準サイズ設定
+$baseFontSizePx:10;
+$baseFontSizePercent:62.5%; // 1.0em ≒ 10px
+
+// 基準行間設定
+$baseLineHeight:1.9;
+
+// フォント設定
+$fontFamily:"Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+
+// フォントサイズを指定するミックスイン
+@mixin fz($size:$baseFontSizePx) {
+  font-size:$size + px;
+  //font-size:($size / 10) + em;
+}
+
+// フォントファミリー
+@mixin font-Lato300 {
+  font-family:"Lato", Arial, "F+UD-ニューロダン M", sans-serif;
+  font-weight:300;
+}
+@mixin font-Lato700 {
+  font-family:"Lato", Arial, "F+UD-ニューロダン M", sans-serif;
+  font-weight:700;
+}
+@mixin font-RobotoSlab {
+  font-family:"Roboto Slab", Century, "F+UD-ニューロダン M", serif;
+  font-weight:400;
+}
+@mixin font-Quicksand400 {
+  font-family:"Quicksand", Arial, "F+UD-ニューロダン M", sans-serif;
+  font-weight:400;
+}
+@mixin font-Quicksand700 {
+  font-family:"Quicksand", Arial, "F+UD-ニューロダン M", sans-serif;
+  font-weight:700;
+}
+@mixin font-NewRodinM {
+  font-family:"F+UD-ニューロダン M", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+}
+@mixin font-NewRodinDB {
+  font-family:"F+UD-ニューロダン DB", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+}
+@mixin font-NewRodinB {
+  font-family:"F+UD-ニューロダン B", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+}

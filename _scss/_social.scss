@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+.socialBtBlock {
+  margin:60px auto;
+  padding:25px 5px;
+  background-color:#fafafa;
+  @include mq(500) {
+    margin:30px auto;
+  }
+}
+
+.socialBtList {
+  @extend %clearfix;
+  margin:0;
+  text-align:center;
+  li {
+    position:relative;
+    display:inline-block;
+    margin:0 5px;
+    vertical-align:bottom;
+    &>a {
+      @extend %hide-text;
+      text-indent:105%;
+      display:block;
+      width:40px;
+      height:40px;
+      background-color:transparent;
+      background-image:url(../images/bt_social.png);
+      background-repeat:no-repeat;
+      background-size:120px 40px;
+    }
+    .count {
+      position:absolute;
+      display:block;
+      bottom:0;
+      right:-3px;
+      text-shadow:1px 1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, -1px -1px 0 #fff;
+      line-height:1;
+      @include fz(11);
+      text-align:right;
+      font-family:Arial, sans-serif;
+      white-space:nowrap;
+    }
+    &.bt_fb {
+      &>a {
+        background-position:0 0;
+      }
+      .count {
+        color:#3b5998;
+      }
+    }
+    &.bt_tw {
+      &>a {
+        background-position:-40px 0;
+      }
+      .count {
+        color:#31a7e0;
+      }
+    }
+    &.bt_line {
+      &>a {
+        background-position:-80px 0;
+      }
+    }
+  }
+}
+

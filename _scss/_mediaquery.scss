@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+@mixin mq($maxWidth) {
+  @media screen and (max-width:$maxWidth + px) {
+    @content;
+  }
+}
+

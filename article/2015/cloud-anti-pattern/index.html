@@ -1,0 +1,322 @@
+﻿<!doctype html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1; IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>アンチパターンから考えるクラウド活用 | シグマコンサルティング株式会社</title>
+    <meta name="description" content="アンチパターンから考えるクラウド活用" />
+    <meta name="keywords" content="Microsoft Azure,Azure,開発,サイトコア,Commerble,Sitecore,CMS,UX,システム＋サービス,シグマコンサルティング,Sigma Consulting" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,700|Roboto+Slab|Quicksand:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- ChatBot -->
+    <link href="/css/botchat.min.css" rel="stylesheet" />
+    <link href="/css/botchat-custom.min.css" rel="stylesheet" />
+    <!-- ChatBot -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/images/favicons/manifest.json">
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#710ea5">
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?9zvmfAxZ5Ec%3D&aa=1" charset="utf-8"></script>
+    <meta property="og:title" content="アンチパターンから考えるクラウド活用 | シグマコンサルティング株式会社" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.sigmact.com/article/2015/cloud-anti-pattern/" />
+    <meta property="og:site_name" content="シグマコンサルティング株式会社" />
+    <meta property="og:description" content="アンチパターンから考えるクラウド活用" />
+    <meta property="og:image" content="https://www.sigmact.com/images/real/antipattern.jpg" />
+    <meta property="fb:admins" content="792819794" />
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <p class="logo"><a href="/"><img src="/images/logo.png" alt="シグマコンサルティング株式会社" /></a></p>
+            <nav class="globalNavi">
+                <ul>
+                    <li><a href="#section-service" title="サービス">SERVICE</a></li>
+                    <li><a href="/case/" title="事例">CASE</a></li>
+                    <li><a href="/updated/" title="BLOG">BLOG</a></li>
+                    <li><a href="/news/" title="お知らせ">NEWS</a></li>
+                    <li><a href="#section-aboutus" title="会社概要">ABOUT US</a></li>
+                    <li><a href="#section-contact" title="お問い合わせ">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="spMenu">
+                <a href="#">
+                    <span class="spMenuBar1"></span>
+                    <span class="spMenuBar2"></span>
+                    <span class="spMenuBar3"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section class="pageTitle">
+        <div class="inner">
+            <img src="/images/real/antipattern.jpg" />
+            <h1 class="titleText">アンチパターンから考えるクラウド活用</h1>
+        </div>
+    </section>
+    <main>
+        <div class="inner">
+            <div class="pageInfo">
+                <p class="pubdate">2015.12.25</p>
+                <div class="socialBtBlock">
+                  <ul class="socialBtList">
+                    <li class="bt_fb"><a href="#">share</a></li>
+                    <li class="bt_tw"><a href="#">ツイート</a></li>
+                    <li class="bt_line"><a href="#">LINEで送る</a></li>
+                  </ul>
+                </div>
+            </div>
+            <section class="freeEdit">
+                <h1>アンチパターンから考えるクラウド活用</h1>
+                <h2>三行でまとめると</h2>
+                <ul class="discList">
+                    <li>クラウドを始めてみたものの、人や組織の問題等でうまくいかないケースを目にする。</li>
+                    <li>うまくいかないクラウドにはパターンがある。</li>
+                    <li>アンチパターンへの対処策をまとめていきたいと思う。</li>
+                </ul>
+
+                <h2>自らを振り返るに</h2>
+                <p>
+                    私がクラウドを使ったSI、もしくは導入をお手伝いしてうまくいかない場合は、実際に技術と戦っているケースよりは、
+                    人(社内組織や体制や運用ルール)と戦っているケースに多く出会う。
+
+                    他にもクラウドを使っただけ(仮想マシンをクラウド上に立てただけ)で、DevOpsの実現は出来ず、
+                    実際の業務やエンジニアリングはオンプレミスの頃と変わらず活かしきれていない、そんなケースにも出会う。
+                    どうして変化できず、もがいている組織や人が多いのか。これは何なのかずっと考えてきた。
+
+                    クラウドの機能的な問題だけではなく、よく起こりやすい問題、及び対処方法としてまとめたい。
+                    ※考えうる対処は、試行中であり、これからも考え続けていく問題ではあるが、
+                    我々は何よりクラウドが提供する価値の本質を理解、再認識して、マインド(哲学)を変える必要があるのではないか。
+
+                </p>
+
+                <h2>1.運用設計に失敗</h2>
+                <p>
+                    実際に数時間で構築できるものを稟議をあげて、社内でいくつかの打ち合わせを通し、
+                    承認後、仮想マシンの作成ボタンをポチッと押す。
+                    ほとんど、オンプレで新しい筐体を購入し、仮想環境にOSをインストールし、立ち上げていたリードタイムと変わっていない、という皮肉のようなケースがある。
+                    その運用ルールだと依頼は二週間前にかけてください、構築にも半月強見てください、
+                    というのはオンプレミスと変わらない、クラウド運用設計の失敗である。
+                </p><p>
+                    →この場合、クラウド運用チーム(もしくは提供サービス企業)に依頼することは、
+                    仮想マシンを作ってくださいという都度のお願いではなく、
+                    運用を自分たちで効率化、自動化できるように指南してください、
+                    もしくは現場で迅速に使えるように移譲してください、であるべきではないか。
+                    特に継続して使い続ける場合、人が不要に関わる部分が継続してコストとしてかかってくる。
+                </p>
+
+                <h2>2.権限移譲していないため速度が鈍化</h2>
+                <p>
+                    速めるには体制や現場への権限移譲が必要だ。現場に任せるべきである。
+                    上の仕事は現場が迅速に回せる体制が出来ているかをチェックすることであってインフラや権限を囲い込むことではない。
+                </p><p>
+                    →変われない組織の解決策として、社外から特命的なチームを呼ぶのは良いかもしれない。
+                </p>
+
+                <h2>3.DevOpsが回っていない</h2>
+                <p>
+                    機能を改修したいという要望を受けてから、あなたのサービスは何時間で改修できるだろうか。
+                    文言を直してくださいに対して、何分で改修できるだろうか。この速度が改善されていない場合、あなたのクラウドは大幅に見直す必要がある。
+                    インフラの増強申請に数日でかつ作業は別業者、自社の社員がコントロール出来ないという状況だと技術的な負債を抱えている状態での運用と言って良い。
+                </p>
+
+                <h2>4.管理の自動化をしない</h2>
+                <p>
+                    クラウド上での管理作業はほとんが自動化でき、多くのメンバーの労力や時間を解放する。
+                    人的なミスがなくなり、運用の安定化を生む。継続的に改善していくのにも必須だが、そこに踏み込まず、手間のまま続けて運用してしまう。
+                </p><p>
+                    →継続的に使用するケースは自動化されていない作業の見直しを。
+                </p>
+
+                <h2>5.何を監視するのか把握していない</h2>
+                <p>
+                    監視だけ別の会社に依頼するというのもあるが、単にCPUやメモリやディスクを監視して対応が後手に回るケースは多い。
+                    もちろん環境の監視は重要だが、それ以上に安定したサービスの状態を定義して、共有することが重要だ。
+
+                </p><p>
+                    →何をもって正常とするかが大事。何をもって正常なのか、定義できるのはサービスを作った人間で、その意見に従って監視を組むべきである。
+                    特定のサービスやURLのステータスコード、及び処理時間など、サービスとして監視することが重要だ。
+                    DevとOpsがわかれると、サービスの質ではなく、CPUやメモリ、ディスクといった問題の側面を見る役が出来てしまう。
+                </p>
+
+                <h2>6.速度の価値について理解していない</h2>
+                <p>
+                    速度は欲しいサービスがすぐ手に入るクラウドの代表的な恩恵の一つだ。
+                    速度の違いは何を生むか？競争力である。1日何件改善できるか？PDCAを高速に循環する。
+                    失敗を早い段階で得て、少ないコストで成功への舵を切り直す。高速で回すほど差がつく時代になった。
+                </p><p>
+                    →速度については、実際に見せてみる、実績を作ることで賛同者を増やしていくことが大事かもしれない。
+                </p>
+
+                <h2>7.減点主義組織との相性は悪い</h2>
+                <p>
+                    クラウドの特徴として、日の浅さ、新機能が随時提供され変化が激しい点がある。
+                    これに対し、変化に追従できず、仮想マシンを立ち上げて終了、クラウド上にある有効な他のサービスを使わずという恩恵を十二分に得られないケースがある。
+                    失敗から得られる経験や教訓は何にも代え難く、サービスの血となり肉となるわけだが失敗を許容しない組織では、チャレンジが難しい。
+                    組織自体が減点主義の場合、クラウドでもチャレンジしにくくなる。
+                </p><p>
+                    →その場合は、超ミニマム体制で仮説検証を続けチャレンジするチームを作るなど、体制自体考え直すことができる。
+                </p>
+
+                <h2>8.工数積算の考えを捨てていない</h2>
+                <p>
+                    自動化が進むクラウドの世界では、工数積算の考え方ではビジネスしづらい。
+                    ※これについてはネットコマース社の資料によくまとめられている。
+                </p><p>
+                    →クラウドでの安定運用には自動化は必須であり、しようと思った場合、
+                    いかに頑張ってインフラを作るかというところから、いかに頑張らないかにシフトしてくる。クリックかスクリプトか設定ファイルで、作れるのだ。
+                    頑張らない事を頑張る人の方が向いている。(一般的なエンジニア素養の一つでもある)
+                    苦労している場合何らかのフローが間違っているか最適化されていない。
+                </p>
+
+                <h2>9.オンプレミスと比較してのデメリットを伝えていない、知らない</h2>
+                <p>
+                    ある王子が言っていたが、クラウドは使うと良いですよ！というメッセージに固執したため、
+                    オンプレミスと異なる部分についてなどデメリットを説いてこなかった。
+                    ゆえにオンプレミスと違う部分について、仕様の違いを受け入れられない人が生まれ、
+                    オンプレミス仕様に固執する人もいる。
+                </p><p>
+                    →オンプレミスとの違いを事前に伝え、マインドを変えてもらうことが必要
+                </p>
+
+                <h2>10.プロトタイピングせずリスクを負う</h2>
+                <p>
+                    大号令のもと1,2年くらいかけてリニューアルするような大規模開発より、現場の担当者が即時に環境を立ち上げ、
+                    数時間後にはサービスプロトタイプを作りあげるような形が求められている。
+                    が、やはり要件定義からゴールの見えないウォーターフォールを行っている企業は多いように思われる。
+                </p><p>
+                    →組織構造が複雑な場合、プロトタイピング専門のチームを作るのが良い。
+                </p>
+
+                <h2>11.自社の社員(メンバー)が触っていない</h2>
+                <p>
+                    導入したクラウドを自社の社員が触っていないという状況は良くない。
+                    クラウド＝インフラ＝専門の人が触るものという固定観念がある。
+                    実際に目の前でポータルやスクリプトから構成を組むと、こんなに簡単なんですねと皆さん言ってもらえるわけだが、触る事によってマインドも変わってくる。
+                    作ってミスしたら作り直せば良い。この速さに触れると、仕事の概念が変わる。
+                    失敗が許されるようになり、試して確認してダメならやり直しが当たり前になる。
+                    速度が優先され、失敗に寛容になり、経験から同じ過ちをおかさないようになり、精度があがる。組織に良い影響を与える。
+                </p><p>
+                    →目の前で構築の様子を見せて、触ってもらおう。
+                </p>
+
+                <h2>12.一括⚪︎⚪︎クラウドへ移行という思考停止</h2>
+                <p>
+                    一昔前だと聞こえが良いかもしれない。が昨今だと唱えるのが楽であるだけで、思考停止に近いかもしれない。
+                    そもそも企業のインフラはオンプレミスの際一社の何かで統一されていただろうか。あまりないはずだ。
+                    パブリッククラウド海外大手や国内、プライベートクラウド全てどこかが優れているということはなく、いずれも得意な領域、突出したサービスを持つ。
+                    これらを組み合わせで適材適所で使うことが企業の競争力となる。
+                </p><p>
+                    →一括⚪︎⚪︎は思考停止の結果ではないか、見直した方が良い。他の選択肢を持たないリスクについても把握した方が良い。
+                </p>
+
+
+                <h2>13.クラウドが好きというメンバーがいない</h2>
+                <p>
+                    AWSでもAzureでも良い。導入に関わっている人に注目している機能、最近のニュースを振ってみると良い。
+                    必要以上に教えてくれたり、まだGAしていない機能を試した結果や課題を教えてくれる。
+                    特定の機能はその人の技術者としての人生、サービスの在り方を変えるくらいの影響を持つ。
+                    当然、好きな技術者は追いかけ、追いかけていない方とさらに差がつく。
+                </p><p>
+                    →クラウド好きな人と仕事しましょう
+                </p>
+
+                <h2>14.マインドの変え方がわからない</h2>
+                <p>
+                    →コミュニティにいきましょう。
+                    コミュニティで活き活きとした人を見れば、ヒントになるはず。
+                    最近はイベントもコミュニティよりなのと、お堅い人向けで微妙に分けられてしまっている感がありますが、なるべくコミュニティよりに。
+
+                    クラウドを使ってもっと幸せになるには？
+                    是非、みなさん議論して、良い世の中にしていきましょう。
+                </p>
+
+                <div class="socialBtBlock">
+                  <ul class="socialBtList">
+                    <li class="bt_fb"><a href="#">share</a></li>
+                    <li class="bt_tw"><a href="#">ツイート</a></li>
+                    <li class="bt_line"><a href="#">LINEで送る</a></li>
+                  </ul>
+                </div>
+                <hr />
+
+            </section>
+        </div>
+        <section id="">
+            <a href="/philosophy">
+                <div class="card" style="background-image:url(/images/real/0001.jpg);">
+                    <div class="copy-cardWide copy-cardCenter copy-textWhite copy-textBgBlack">
+                        <h1>PHILOSOPHY</h1>
+                        <p>シグマコンサルティングの哲学、信条について。</p>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <style type="text/css">
+            #hoge p {
+                width: 80%;
+                margin: 10px auto;
+                padding: 10px;
+                border: 1px solid #fff;
+            }
+        </style>
+
+    </main>
+    <footer>
+      <div class="footerSocialArea">
+      </div>
+      <div class="footerCopyArea">
+        <div class="inner">
+          <p class="copy">© Sigma Consulting Co.,Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <div class="back-top">
+        <a href="#top"></a>
+    </div>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1057460-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-1057460-1');
+    </script>
+
+    <!--ChatBot-->
+    <div id="botchat" class="wc-narrow"></div>
+    <div id="open-bot">
+        <a href="">お問い合わせはこちらから</a>
+    </div>
+
+    <script src="/js/botchat.min.js"></script>
+    <script src="/js/botchat-custom.min.js"></script>
+    <!--ChatBot-->
+
+</body>
+</html>

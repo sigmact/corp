@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+// ClearFix 
+%clearfix {
+ zoom:1;
+ &:after {
+   content:"";
+   display:block;
+   clear:both;
+   height:0;
+   visibility:hidden;
+ }
+}
+
+// HideText
+%hide-text {
+  text-indent:100%;
+  *text-indent:-9999px; // IE7対応
+  white-space:nowrap;
+  overflow:hidden;
+  word-wrap:normal !important;
+}
+
+// アニメーション
+$prefixes: ("-webkit-", "-moz-", null);
+@mixin keyframes($name){
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+@mixin animation($name, $duration:1s, $timing:linear, $delay:0, $count:infinite, $direction:null, $mode:none, $state:running) {
+  @each $prefix in $prefixes {
+    #{$prefix}#{animation-name}:$name;
+    #{$prefix}#{animation-duration}:$duration;
+    #{$prefix}#{animation-timing-function}:$timing;
+    #{$prefix}#{animation-delay}:$delay;
+    #{$prefix}#{animation-iteration-count}:$count;
+    #{$prefix}#{animation-direction}:$direction;
+    #{$prefix}#{animation-fill-mode}:$mode;
+    #{$prefix}#{animation-play-state}:$state;
+  }
+}
