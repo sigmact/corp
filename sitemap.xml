@@ -103,60 +103,13 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.sigmact.com/updated/interview/</loc>
-  <lastmod>2020-11-03T07:01:19+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.sigmact.com/updated/design/</loc>
-  <lastmod>2020-11-03T07:01:03+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://www.sigmact.com/updated/azure/security/</loc>
   <lastmod>2020-11-03T07:00:54+00:00</lastmod>
   <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.sigmact.com/updated/beer/</loc>
-  <lastmod>2020-11-03T07:00:59+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://www.sigmact.com/updated/azure/</loc>
-  <lastmod>2020-11-03T07:00:51+00:00</lastmod>
-  <priority>0.51</priority>
 </url>
 <url>
   <loc>https://www.sigmact.com/updated/zero-to-hero/</loc>
   <lastmod>2020-11-03T07:01:37+00:00</lastmod>
   <priority>0.51</priority>
 </url>
-<url>
-  <loc>https://www.sigmact.com/updated/growth-hacking/</loc>
-  <lastmod>2020-11-03T07:01:04+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://www.sigmact.com/updated/zatsudan/</loc>
-  <lastmod>2020-11-03T07:01:36+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://www.sigmact.com/updated/music/</loc>
-  <lastmod>2020-11-03T07:01:21+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://www.sigmact.com/updated/about/</loc>
-  <lastmod>2020-11-03T07:00:50+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://www.sigmact.com/updated/management/</loc>
-  <lastmod>2020-11-03T07:01:21+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
-
 </urlset>
