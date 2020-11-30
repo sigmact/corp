@@ -39,6 +39,8 @@
     <![endif]-->
     <script src="/js/jquery-1.11.1.min.js"></script>
     <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="//webfont.fontplus.jp/accessor/script/fontplus.js?9zvmfAxZ5Ec%3D&aa=1" charset="utf-8"></script>
     <meta property="og:title" content="シグマコンサルティング株式会社は顧客の「事業成長」のために、【Consulting(コンサルティング)、Cloud(クラウド)、Code(コード)、Desing(デザイン)】の粋(すい)を集め、戦略を立て、継続的な事業改善を行うエンジニア集団です。" />
     <meta property="og:type" content="website" />
@@ -194,6 +196,18 @@
 
             </section>
         </div>
+
+        <section id="updated">
+            <ul>
+                <li v-for="item in entry" v-cloak>
+                  <span>{{ item.title }}</span>
+                  <span>{{ item.url }}</span>
+                  <span>{{ item.eyecatch }}</span>
+                  <span>{{ item.published }}</span>
+                  <span>{{ item.update }}</span>
+                </li>
+            </ul>
+        </section>
 
         <section id="case">
             <div class="card" style="background-image:url(/images/real/code.png);">
@@ -396,6 +410,27 @@
     <script src="/js/botchat.min.js"></script>
     <script src="/js/botchat-custom.min.js"></script>
     <!--ChatBot-->
+
+    <script type="text/javascript">
+        var updated = new Vue({
+            el: '#updated',
+            data () {
+                return {
+                    entry: []
+                }
+            },
+            mounted () {
+                axios
+                .get('/updated/index.json')
+                .then(function(response) {
+                    this.entry = response.data.entry;
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
