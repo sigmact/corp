@@ -422,7 +422,7 @@
                 axios
                 .get('/updated/index.json')
                 .then(function(response) {
-                    this.entry = response.data.entry;
+                    updated.entry = response.data.entry;
                 })
                 .catch(function(error) {
                     console.log(error);
