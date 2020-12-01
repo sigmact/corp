@@ -434,6 +434,15 @@
                 axios
                 .get('/updated/index.json')
                 .then(function(response) {
+
+                    if (Array.isArray(response.data.entry)) {
+                        response.data.entry.forEach(function(val,index,ar) {
+                            if (val.description.length >= 120) {
+                                val.description = val.description.slice(0, 120) + "...";
+                            }
+                        });
+                    }
+
                     updated.entry = response.data.entry;
                 })
                 .catch(function(error) {
