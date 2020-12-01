@@ -194,19 +194,29 @@
                 </div>
 
             </section>
-        </div>
 
-        <section id="updated">
-            <ul>
-                <li v-for="item in entry" v-cloak>
-                  <span>{{ item.title }}</span>
-                  <span>{{ item.url }}</span>
-                  <span>{{ item.eyecatch }}</span>
-                  <span>{{ item.published }}</span>
-                  <span>{{ item.update }}</span>
-                </li>
-            </ul>
-        </section>
+            <section id="updated">
+
+                <div class="column" v-for="item in entry" v-cloak>
+                    <a href="{{ item.url }}">
+                        <div class="columnInfo">
+                            <div class="columnTitle colored">
+                                <span class="columnTitleInner">{{ item.title }}</span></div>
+                            <div class="columnBody">
+                                <div class="columnImage"><img src="{{ item.eyecatch }}" alt="{{ item.description }}" /></div>
+                                <div class="pubdate">
+                                    <span class="month">JAN</span>
+                                    <span class="day">27</span>
+                                    <span class="year">2020</span>
+                                </div>
+                                <p>{{ item.description }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+        </div>
 
         <section id="case">
             <div class="card" style="background-image:url(/images/real/code.png);">
