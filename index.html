@@ -197,24 +197,26 @@
 
             <section id="updated">
 
-                <div class="column" v-for="item in entry" v-cloak>
-                    <a v-bind:href="item.url">
-                        <div class="columnInfo">
-                            <div class="columnTitle colored">
-                                <span class="columnTitleInner">{{ item.title }}</span></div>
-                            <div class="columnBody">
-                                <div class="columnImage"><img v-bind:src="item.eyecatch" v-bind:alt="item.description" /></div>
-                                <div class="pubdate">
-                                    <span class="month">JAN</span>
-                                    <span class="day">27</span>
-                                    <span class="year">2020</span>
+                <div class="columnizedBlock columnizedBy3x1 noImageOnSp">
+                    <div class="column" v-for="item in entry" v-cloak>
+                        <a v-bind:href="item.url">
+                            <div class="columnInfo">
+                                <div class="columnTitle colored">
+                                    <span class="columnTitleInner">{{ item.title }}</span></div>
+                                <div class="columnBody">
+                                    <div class="columnImage"><img v-bind:src="item.eyecatch" v-bind:alt="item.description" /></div>
+                                    <div class="pubdate">
+                                        <span class="month">JAN</span>
+                                        <span class="day">27</span>
+                                        <span class="year">2020</span>
+                                    </div>
+                                    <p>{{ item.description }}</p>
                                 </div>
-                                <p>{{ item.description }}</p>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-
+                
             </section>
         </div>
 
