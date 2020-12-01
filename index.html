@@ -198,12 +198,12 @@
             <section id="updated">
 
                 <div class="column" v-for="item in entry" v-cloak>
-                    <a href="{{ item.url }}">
+                    <a v-bind:href="{{ item.url }}">
                         <div class="columnInfo">
                             <div class="columnTitle colored">
                                 <span class="columnTitleInner">{{ item.title }}</span></div>
                             <div class="columnBody">
-                                <div class="columnImage"><img src="{{ item.eyecatch }}" alt="{{ item.description }}" /></div>
+                                <div class="columnImage"><img v-bind:src="{{ item.eyecatch }}" v-bind:alt="{{ item.description }}" /></div>
                                 <div class="pubdate">
                                     <span class="month">JAN</span>
                                     <span class="day">27</span>
