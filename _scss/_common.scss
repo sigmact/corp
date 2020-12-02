@@ -1,17 +1,87 @@
 @charset "utf-8";
 
+// 存在しないmixinをstyle.cssから適当に作成
+@mixin box-sizing($box-size) {
+  -moz-box-sizing: $box-size;
+  -webkit-box-sizing: $box-size;
+  box-sizing: $box-size;
+}
+@mixin transform($transform-value) {
+  -moz-transform: $transform-value;
+  -ms-transform: $transform-value;
+  -webkit-transform: $transform-value;
+  transform: $transform-value;
+}
+
+// 存在しないクラスをstyle.cssから適当に作成
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
 // 全般
 html {
   font-size:$baseFontSizePercent;
 }
 
 body {
-  @include fz(16);
+  @include fz(18);
   @include font-NewRodinM;
   line-height:$baseLineHeight;
   color:$baseStringColor;
   @include mq(500) {
-    @include fz(13);
+    @include fz(16);
   }
 }
 
@@ -50,7 +120,7 @@ em {
   padding:0 5px;
   font-weight:bold;
   background:-webkit-linear-gradient(#fff 50%, $sigRed 51%);
-  background:linear-gradient(#fff 50%, mix(#fff, $sigRed, 70%) 51%);
+  background:linear-gradient(#ffffff 50%, mix(#ffffff, $sigRed, 70%) 51%);
   text-shadow:1px 1px rgba(255,255,255,1);
 }
 
@@ -58,7 +128,7 @@ strong {
   @include font-NewRodinDB;
   margin-right:.3em;
   padding:2px 5px;
-  background-color:mix(#fff, $sigRed, 20%);
+  background-color:mix(#ffffff, $sigRed, 20%);
   font-weight:normal;
   color:#fff;
 }
@@ -226,7 +296,7 @@ header {
   position:relative;
   float:right;
   display:block;
-  @include fz(16);
+  @include fz(18);
   ul {
     li {
       float:left;
@@ -265,7 +335,7 @@ header {
     }
   }
   @include mq(1020) {
-    @include fz(14);
+    @include fz(18);
     ul {
       margin-right:0;
       li {
@@ -430,7 +500,7 @@ header {
   p {
     margin:20px 0 0;
     @include font-NewRodinDB;
-    @include fz(15);
+    @include fz(1);
     line-height:1.6;
     span {
       display:inline-block;
@@ -445,11 +515,11 @@ header {
     left:0;
     @include transform(translate(0,0));
     h1 {
-      @include fz(18);
+      @include fz(22);
       line-height:1.4;
     }
     p {
-      @include fz(12);
+      @include fz(16);
     }
   }
 }
@@ -539,7 +609,7 @@ header {
   @include mq(500) {
     margin:0 0 -20px;
     .pubdate {
-      @include fz(14);
+      @include fz(16);
     }
     .socialBtBlock {
       margin-top:-7px;
@@ -623,16 +693,16 @@ main section {
       & + .lead {
         margin-top:-25px;
         margin-bottom:20px;
-        @include fz(15);
+        @include fz(18);
       }
     }
     h2 {
       margin:40px 0 20px;
-      @include fz(17);
+      @include fz(18);
     }
     h3 {
       margin:20px 0;
-      @include fz(14)
+      @include fz(18)
     }
     p {
       margin:0 0 10px;
@@ -691,7 +761,7 @@ hr {
         display:inline-block;
         margin-right:10px;
         color:$sigBlack;
-        @include fz(16);
+        @include fz(18);
       }
       .category {
         display:inline-block;
@@ -718,21 +788,21 @@ hr {
       margin:15px 0;
       .newsInfo {
         .date {
-          @include fz(14);
+          @include fz(18);
         }
         .category {
           min-width:0;
           margin-top:-4px;
           padding:2px 5px;
           border:1px solid mix(#fff, $sigBlack, 30%);
-          @include fz(10);
+          @include fz(18);
           line-height:1;
         }
         a {
           position:relative;
           display:block;
           margin-top:2px;
-          @include fz(14);
+          @include fz(18);
         }
       }
     }
@@ -1022,7 +1092,7 @@ footer {
   background-color:$sigBlack;
   .copy {
     color:#fff;
-    @include fz(14);
+    @include fz(18);
     text-align:center;
     @include font-Lato300;
   }
@@ -1124,7 +1194,7 @@ footer {
   margin:20px 0 40px;
   border-collapse:separate;
   border-spacing:2px;
-  @include fz(16);
+  @include fz(18);
   thead {
     th {
       padding:10px 5px;
@@ -1191,7 +1261,7 @@ footer {
   }
   @include mq(768) {
     border-collapse:collapse;
-    @include fz(13);
+    @include fz(18);
     thead {
       display:none;
     }
@@ -1205,7 +1275,7 @@ footer {
         th {
           display:block;
           background-color:transparent !important;
-          @include fz(14);
+          @include fz(18);
           @include font-NewRodinDB;
           font-weight:bold;
           padding-left:1.6em;
@@ -1385,7 +1455,7 @@ footer {
         position:relative;
         margin:10px 0 0;
         padding:0 20px 20px;
-        @include fz(14);
+        @include fz(16);
         @include font-NewRodinM;
         color:$baseStringColor;
       }

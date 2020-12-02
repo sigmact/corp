@@ -1,4 +1,23 @@
 @charset "UTF-8";
+.socialBtList, .columnizedBlock, main section, .pageInfo, .inner {
+  zoom: 1;
+}
+.socialBtList:after, .columnizedBlock:after, main section:after, .pageInfo:after, .inner:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.socialBtList li > a {
+  text-indent: 100%;
+  *text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+  word-wrap: normal !important;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -42,6 +61,7 @@ caption, th, td {
 q, blockquote {
   quotes: none;
 }
+
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
@@ -53,25 +73,6 @@ a img {
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
-}
-
-.inner, .pageInfo, main section, .columnizedBlock, .socialBtList {
-  zoom: 1;
-}
-.inner:after, .pageInfo:after, main section:after, .columnizedBlock:after, .socialBtList:after {
-  content: "";
-  display: block;
-  clear: both;
-  height: 0;
-  visibility: hidden;
-}
-
-.socialBtList li > a {
-  text-indent: 100%;
-  *text-indent: -9999px;
-  white-space: nowrap;
-  overflow: hidden;
-  word-wrap: normal !important;
 }
 
 html {
@@ -110,7 +111,7 @@ table {
 a {
   color: #0f4ba3;
   text-decoration: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 a:hover {
   color: #87a5d1;
@@ -127,15 +128,15 @@ em {
   padding: 0 5px;
   font-weight: bold;
   background: -webkit-linear-gradient(#fff 50%, #db4a48 51%);
-  background: linear-gradient(#ffffff 50%, #f4c8c8 51%);
+  background: linear-gradient(#ffffff 50%, #f4c9c8 51%);
   text-shadow: 1px 1px white;
 }
 
 strong {
   font-family: "F+UD-ニューロダン DB", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
-  margin-right: .3em;
+  margin-right: 0.3em;
   padding: 2px 5px;
-  background-color: #e26e6c;
+  background-color: #e26e6d;
   font-weight: normal;
   color: #fff;
 }
@@ -150,7 +151,7 @@ textarea {
 
 .discList {
   margin: 0;
-  padding: 0 0 0 2.0em;
+  padding: 0 0 0 2em;
 }
 .discList li {
   list-style-type: disc;
@@ -164,7 +165,7 @@ textarea {
 }
 .numericalList li {
   position: relative;
-  padding: 0 0 0 2.0em;
+  padding: 0 0 0 2em;
 }
 .numericalList li:before {
   content: counter(num) ".";
@@ -172,17 +173,17 @@ textarea {
   position: absolute;
   top: 0;
   left: 0;
-  width: 2.0em;
+  width: 2em;
   text-align: center;
 }
 
-header, footer {
+footer, header {
   clear: both;
   width: 100%;
   min-width: 1020px;
 }
 @media screen and (max-width: 1020px) {
-  header, footer {
+  footer, header {
     min-width: 100%;
   }
 }
@@ -328,7 +329,7 @@ header .inner {
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    opacity: .1;
+    opacity: 0.1;
     border-radius: 50%;
     -moz-transform: translate(-50%, -50%) scale(5);
     -ms-transform: translate(-50%, -50%) scale(5);
@@ -362,7 +363,7 @@ header .inner {
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    opacity: .1;
+    opacity: 0.1;
     border-radius: 50%;
     -moz-transform: translate(-50%, -50%) scale(5);
     -ms-transform: translate(-50%, -50%) scale(5);
@@ -396,7 +397,7 @@ header .inner {
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    opacity: .1;
+    opacity: 0.1;
     border-radius: 50%;
     -moz-transform: translate(-50%, -50%) scale(5);
     -ms-transform: translate(-50%, -50%) scale(5);
@@ -448,7 +449,7 @@ header .inner {
   position: absolute;
   display: block;
   content: "";
-  transition: all .6s;
+  transition: all 0.6s;
   z-index: -1;
   background-color: #710ea5;
   width: 200px;
@@ -495,7 +496,7 @@ header .inner {
   }
   .globalNavi ul li a {
     display: block;
-    border-top: 1px dashed #323232;
+    border-top: 1px dashed #333333;
     border-radius: 0;
     padding: 15px 10px;
     color: #fff;
@@ -503,7 +504,7 @@ header .inner {
     font-weight: 300;
     text-decoration: none;
     text-align: center;
-    transition: all, .3s;
+    transition: all, 0.3s;
   }
   .globalNavi ul li a:after {
     display: none;
@@ -542,11 +543,11 @@ header .inner {
     height: 100%;
     background-color: #710ea5;
     border-radius: 4px;
-    transition: all .4s;
+    transition: all 0.4s;
   }
   .spMenu a .spMenuBar1,
-  .spMenu a .spMenuBar2,
-  .spMenu a .spMenuBar3 {
+.spMenu a .spMenuBar2,
+.spMenu a .spMenuBar3 {
     position: absolute;
     display: block;
     right: 13px;
@@ -554,7 +555,7 @@ header .inner {
     height: 2px;
     border-radius: 4px;
     background-color: #fff;
-    transition: all .4s;
+    transition: all 0.4s;
   }
   .spMenu a .spMenuBar1 {
     top: 13px;
@@ -752,7 +753,7 @@ header .inner {
   font-weight: 700;
   font-size: 18px;
   color: #000;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 }
 .pageInfo .socialBtBlock {
   float: left;
@@ -953,7 +954,7 @@ hr:after {
     min-width: 0;
     margin-top: -4px;
     padding: 2px 5px;
-    border: 1px solid #4c4c4c;
+    border: 1px solid #4d4d4d;
     font-size: 18px;
     line-height: 1;
   }
@@ -991,7 +992,7 @@ hr:after {
   }
 }
 
-.copy-cardWide, .copy-cardLeft, .copy-cardCenter, .copy-cardRight {
+.copy-cardRight, .copy-cardCenter, .copy-cardLeft, .copy-cardWide {
   position: relative;
   top: 50%;
   line-height: 1.8;
@@ -1003,7 +1004,7 @@ hr:after {
   font-family: "F+UD-ニューロダン DB", "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
 }
 @media screen and (max-width: 1020px) {
-  .copy-cardWide, .copy-cardLeft, .copy-cardCenter, .copy-cardRight {
+  .copy-cardRight, .copy-cardCenter, .copy-cardLeft, .copy-cardWide {
     top: 0;
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
@@ -1243,14 +1244,14 @@ hr:after {
 }
 @media screen and (max-width: 1020px) {
   .companyInfo,
-  .contactInfo {
+.contactInfo {
     width: 60%;
     margin: 20px auto;
   }
 }
 @media screen and (max-width: 500px) {
   .companyInfo,
-  .contactInfo {
+.contactInfo {
     width: 100%;
   }
 }
@@ -1310,10 +1311,10 @@ footer .copy {
   float: left;
   width: 25%;
   height: 98px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .footerSocialArea .footer-insta a:hover {
-  opacity: .7;
+  opacity: 0.7;
 }
 @media screen and (max-width: 900px) {
   .footerSocialArea .inner {
@@ -1355,7 +1356,7 @@ footer .copy {
   height: 60px;
   background: #000 url(../images/bt_back-top.png) left center no-repeat;
   border-radius: 6px 0 0 6px;
-  transition: all .3s;
+  transition: all 0.3s;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
 }
 .back-top a:hover {
@@ -1418,9 +1419,9 @@ footer .copy {
   display: inline-block;
   box-sizing: border-box;
   width: 1.2em;
-  height: .8em;
-  top: .5em;
-  left: .4em;
+  height: 0.8em;
+  top: 0.5em;
+  left: 0.4em;
   border-left: 4px solid #db4a48;
   border-bottom: 4px solid #db4a48;
   -moz-transform: rotate(-45deg);
@@ -1483,7 +1484,7 @@ footer .copy {
     left: 0;
     width: 6em;
     height: 100%;
-    padding: 2px .5em;
+    padding: 2px 0.5em;
     color: #fff;
     text-align: center;
   }
@@ -1533,7 +1534,7 @@ footer .copy {
 }
 .columnizedBlock.columnizedBy2x1 .column .columnImage img, .columnizedBlock.columnizedBy3x1 .column .columnImage img {
   width: 100%;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .columnizedBlock.columnizedBy2x1 .column .columnImage.bordered, .columnizedBlock.columnizedBy3x1 .column .columnImage.bordered {
   border-top: 1px solid #eee;
@@ -1590,7 +1591,7 @@ footer .copy {
   font-weight: bold;
   line-height: 1.4;
   color: #333;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .columnizedBlock.columnizedBy2x1 .column .columnTitle.colored, .columnizedBlock.columnizedBy3x1 .column .columnTitle.colored {
   display: table;
@@ -1653,7 +1654,7 @@ footer .copy {
   font-size: 10px;
   font-family: Arial, sans-serif;
   font-weight: normal;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .columnizedBlock.columnizedBy2x1 .column a .columnTitle, .columnizedBlock.columnizedBy3x1 .column a .columnTitle {
   color: #0f4ba3;
@@ -1689,7 +1690,7 @@ footer .copy {
   background-color: #f2fafb;
 }
 .columnizedBlock.columnizedBy2x1 .column a:hover:after, .columnizedBlock.columnizedBy3x1 .column a:hover:after {
-  background-color: #7fcfd7;
+  background-color: #80d0d7;
 }
 .columnizedBlock.columnizedBy2x1 .column a:hover .columnImage img, .columnizedBlock.columnizedBy3x1 .column a:hover .columnImage img {
   width: 100%;
@@ -1699,7 +1700,7 @@ footer .copy {
   transform: scale(1.1, 1.1);
 }
 .columnizedBlock.columnizedBy2x1 .column a:hover .columnTitle, .columnizedBlock.columnizedBy3x1 .column a:hover .columnTitle {
-  color: #3fb7c3;
+  color: #40b8c3;
 }
 .columnizedBlock.columnizedBy2x1 .column a:hover .columnTitle.colored, .columnizedBlock.columnizedBy3x1 .column a:hover .columnTitle.colored {
   color: #fff;
@@ -1803,7 +1804,7 @@ footer .copy {
   border-radius: 2px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
-  transition: margin .3s, padding .3s, background-color .6s;
+  transition: margin 0.3s, padding 0.3s, background-color 0.6s;
 }
 .linkButton a:after {
   position: absolute;
@@ -1813,7 +1814,7 @@ footer .copy {
   height: 100%;
   top: 0;
   left: 0;
-  transition: all .3s;
+  transition: all 0.3s;
   z-index: -1;
 }
 .linkButton a:hover {
@@ -1832,7 +1833,6 @@ footer .copy {
   -webkit-transform: scale(2) rotate(180deg);
   transform: scale(2) rotate(180deg);
 }
-
 .socialBtBlock {
   margin: 60px auto;
   padding: 25px 5px;
@@ -1992,15 +1992,15 @@ footer .copy {
 }
 @media screen and (max-width: 500px) {
   .freeEdit .asRow.asIsOnSp .floatLeft,
-  .freeEdit .asRow.asIsOnSp .floatRight {
+.freeEdit .asRow.asIsOnSp .floatRight {
     max-width: none;
     width: 45%;
   }
   .freeEdit .asRow.asIsOnSp .floatLeft > iframe, .freeEdit .asRow.asIsOnSp .floatLeft > a > img, .freeEdit .asRow.asIsOnSp .floatLeft > img, .freeEdit .asRow.asIsOnSp .floatLeft > figure,
-  .freeEdit .asRow.asIsOnSp .floatRight > iframe,
-  .freeEdit .asRow.asIsOnSp .floatRight > a > img,
-  .freeEdit .asRow.asIsOnSp .floatRight > img,
-  .freeEdit .asRow.asIsOnSp .floatRight > figure {
+.freeEdit .asRow.asIsOnSp .floatRight > iframe,
+.freeEdit .asRow.asIsOnSp .floatRight > a > img,
+.freeEdit .asRow.asIsOnSp .floatRight > img,
+.freeEdit .asRow.asIsOnSp .floatRight > figure {
     margin: 0;
   }
   .freeEdit .asRow.asIsOnSp .floatLeft {
