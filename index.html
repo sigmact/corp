@@ -206,9 +206,9 @@
                                 <div class="columnBody">
                                     <div class="columnImage"><img v-bind:src="item.eyecatch" v-bind:alt="item.description" /></div>
                                     <div class="pubdate">
-                                        <span class="month">JAN</span>
-                                        <span class="day">27</span>
-                                        <span class="year">2020</span>
+                                        <span class="month">{{ item.publishedMonth }}</span>
+                                        <span class="day">{{ item.publishedDay }}</span>
+                                        <span class="year">{{ item.publishedYear }}</span>
                                     </div>
                                     <p>{{ item.description }}</p>
                                 </div>
@@ -436,10 +436,24 @@
                 .then(function(response) {
 
                     if (Array.isArray(response.data.entry)) {
+                        var dateReg = /(\d{4})-(\d{2})-(\d{2})/;
+
                         response.data.entry.forEach(function(val,index,ar) {
                             if (val.description.length >= 120) {
                                 val.description = val.description.slice(0, 120) + "...";
                             }
+
+                            var matchResult = val.published.match(dateReg);
+                            if (matchResult.length >= 4) {
+                                var publishedDate = new Date(matchResult[1] - 0, matchResult[2] - 1, matchResult[3] - 0);
+                                val.publishedDate = publishedDate;
+
+                                var splitedDate = publishedDate.toDateString().split(' ');
+                                val.publishedYear = splitedDate[3];
+                                val.publishedMonth = splitedDate[1].toUpperCase();
+                                val.publishedDay = splitedDate[2];
+                            }
+
                         });
                     }
 
