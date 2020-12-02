@@ -46,3 +46,10 @@ $prefixes: ("-webkit-", "-moz-", null);
     #{$prefix}#{animation-play-state}:$state;
   }
 }
+
+.line-clamp {
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}

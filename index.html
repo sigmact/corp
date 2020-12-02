@@ -210,7 +210,7 @@
                                         <span class="day">{{ item.publishedDay }}</span>
                                         <span class="year">{{ item.publishedYear }}</span>
                                     </div>
-                                    <p>{{ item.description }}</p>
+                                    <p class="line-clamp">{{ item.description }}</p>
                                 </div>
                             </div>
                         </a>
@@ -439,10 +439,6 @@
                         var dateReg = /(\d{4})-(\d{2})-(\d{2})/;
 
                         response.data.entry.forEach(function(val,index,ar) {
-                            if (val.description.length >= 100) {
-                                val.description = val.description.slice(0, 100) + "...";
-                            }
-
                             var matchResult = val.published.match(dateReg);
                             if (matchResult.length >= 4) {
                                 var publishedDate = new Date(matchResult[1] - 0, matchResult[2] - 1, matchResult[3] - 0);
