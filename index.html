@@ -439,8 +439,8 @@
                         var dateReg = /(\d{4})-(\d{2})-(\d{2})/;
 
                         response.data.entry.forEach(function(val,index,ar) {
-                            if (val.description.length >= 120) {
-                                val.description = val.description.slice(0, 120) + "...";
+                            if (val.description.length >= 100) {
+                                val.description = val.description.slice(0, 100) + "...";
                             }
 
                             var matchResult = val.published.match(dateReg);
