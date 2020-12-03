@@ -439,7 +439,7 @@
                         var dateReg = /(\d{4})-(\d{2})-(\d{2})/;
 
                         response.data.entry.forEach(function(val,index,ar) {
-                            var matchResult = val.published.match(dateReg);
+                            var matchResult = val.update.match(dateReg);
                             if (matchResult.length >= 4) {
                                 var publishedDate = new Date(matchResult[1] - 0, matchResult[2] - 1, matchResult[3] - 0);
                                 val.publishedDate = publishedDate;
